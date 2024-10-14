@@ -14,3 +14,12 @@ CREATE TABLE passwords.people (
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE passwords.websites (
+  name varchar(50) NOT NULL COMMENT 'Name of the website.',
+  url varchar(2000) NOT NULL COMMENT 'URL of the website.',
+  CONSTRAINT websitesPK PRIMARY KEY (url)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
