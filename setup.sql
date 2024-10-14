@@ -4,7 +4,7 @@ CREATE DATABASE passwords;
 
 USE passwords;
 
-CREATE TABLE passwords.people (
+CREATE TABLE IF NOT EXISTS passwords.people (
   firstName varchar(50) NOT NULL COMMENT 'The first name of a person.',
   lastName varchar(50) NOT NULL COMMENT 'The last name of a person.',
   email varchar(320) NOT NULL COMMENT 'The email of a person. No two people within the passwords database can use the same email.',
@@ -15,7 +15,7 @@ ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE passwords.websites (
+CREATE TABLE IF NOT EXISTS passwords.websites (
   name varchar(50) NOT NULL COMMENT 'Name of the website.',
   url varchar(2000) NOT NULL COMMENT 'URL of the website.',
   CONSTRAINT websitesPK PRIMARY KEY (url)
