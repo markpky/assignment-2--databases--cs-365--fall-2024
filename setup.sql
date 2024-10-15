@@ -5,18 +5,18 @@ CREATE DATABASE passwords;
 USE passwords;
 
 CREATE TABLE IF NOT EXISTS passwords.people (
-  personID smallint(5) NOT NULL COMMENT 'Unique identifier for a person.',
-  firstName varchar(50) NOT NULL COMMENT 'The first name of a person.',
-  lastName varchar(50) NOT NULL COMMENT 'The last name of a person.',
-  email varchar(320) NOT NULL COMMENT 'The email of a person. No two people within the passwords database can use the same email.',
-  comment varchar(60) NULL COMMENT 'A little comment about the person.',
+  personID smallint(5) NOT NULL COMMENT,
+  firstName varchar(50) NOT NULL COMMENT,
+  lastName varchar(50) NOT NULL COMMENT,
+  email varchar(320) NOT NULL COMMENT,
+  comment varchar(60) NULL COMMENT,
   CONSTRAINT peoplePK PRIMARY KEY (personID)
 );
 
 CREATE TABLE IF NOT EXISTS passwords.websites (
-  websiteID smallint(5) NOT NULL COMMENT 'Unique identifier for a website',
-  name varchar(50) NOT NULL COMMENT 'Name of the website.',
-  url varchar(2000) NOT NULL COMMENT 'URL of the website.',
+  websiteID smallint(5) NOT NULL COMMENT,
+  name varchar(50) NOT NULL COMMENT,
+  url varchar(2000) NOT NULL COMMENT,
   CONSTRAINT websitesPK PRIMARY KEY (websiteID)
 );
 
