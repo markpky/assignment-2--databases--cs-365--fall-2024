@@ -10,7 +10,7 @@ VALUES
 INSERT INTO people
   (personID, firstName, lastName, email)
 VALUES
-  (3, "John", "Doe", "@yahoo.com");
+  (3, "John", "Doe", "generic.email@yahoo.com");
 
 INSERT INTO websites
   (websiteID, name, url, comment)
