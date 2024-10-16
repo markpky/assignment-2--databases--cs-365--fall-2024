@@ -5,19 +5,21 @@ CREATE DATABASE passwords;
 USE passwords;
 
 CREATE TABLE IF NOT EXISTS passwords.people (
-  personID smallint(5) NOT NULL COMMENT,
-  firstName varchar(50) NOT NULL COMMENT,
-  lastName varchar(50) NOT NULL COMMENT,
-  email varchar(320) NOT NULL COMMENT,
-  comment varchar(60) NULL COMMENT,
+  personID smallint(5) NOT NULL,
+  firstName varchar(50) NOT NULL,
+  lastName varchar(50) NOT NULL,
+  email varchar(320) NOT NULL,
+  comment varchar(60) NULL,
   CONSTRAINT peoplePK PRIMARY KEY (personID)
 );
 
 CREATE TABLE IF NOT EXISTS passwords.websites (
-  websiteID smallint(5) NOT NULL COMMENT,
-  name varchar(50) NOT NULL COMMENT,
-  url varchar(2000) NOT NULL COMMENT,
+  websiteID smallint(5) NOT NULL,
+  name varchar(50) NOT NULL,
+  url varchar(60) NOT NULL,
+  comment varchar(60) DEFAULT NULL,
   CONSTRAINT websitesPK PRIMARY KEY (websiteID)
+  UNIQUE KEY websites_unique (url)
 );
 
 CREATE TABLE IF NOT EXISTS passwords.users (
