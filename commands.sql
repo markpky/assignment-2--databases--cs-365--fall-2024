@@ -11,3 +11,5 @@ SELECT CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) AS "Passwords
 
 SELECT CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) AS "Passwords" FROM users
 JOIN websites WHERE (users.websiteID = websites.websiteID) AND url LIKE "https%" LIMIT 2;
+
+UPDATE websites SET url = "https://www.johnsdonuts.com/" WHERE websiteID = 2;
