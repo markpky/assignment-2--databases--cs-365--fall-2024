@@ -17,3 +17,5 @@ UPDATE websites SET url = "https://www.johnsdonuts.com/" WHERE websiteID = 2;
 UPDATE users SET password = AES_ENCRYPT("this_is_a_strong_password_for_a_donut_shop_owner", @key_str, @init_vector) WHERE personID = 3;
 
 DELETE FROM websites WHERE url = "https://www.wizard101.com/";
+
+DELETE FROM users WHERE password = AES_ENCRYPT("this_is_a_strong_password_for_a_donut_shop_owner", @key_str, @init_vector);
