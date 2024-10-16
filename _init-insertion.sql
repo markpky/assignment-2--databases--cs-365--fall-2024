@@ -23,4 +23,6 @@ VALUES
 INSERT INTO users
   (personID, websiteID, username, password, timestamp, comment)
 VALUES
-  (3, 2, "admin", AES_ENCRYPT('secretpassword', @key_str, @init_vector), '2004-03-12 00:03:34', "last login: ???");
+  (3, 2, "storemanager", AES_ENCRYPT("secretpassword", @key_str, @init_vector), "2004-03-12 00:03:34", "last login: ???"),
+  (1, 1, "creeperkiller32", AES_ENCRYPT("thecrazyshirt6796", @key_str, @init_vector), "2012-06-01 10:15:42", "total playtime: 1042 hours"),
+  (2, 3, "BattleHero", AES_ENCRYPT("76$efGrach", @key_str, @init_vector), "2020-11-08 13:42:12", "channel hacked once");
