@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS passwords.people (
   lastName varchar(50) NOT NULL,
   email varchar(320) NOT NULL,
   comment varchar(60) NULL,
-  CONSTRAINT peoplePK PRIMARY KEY (personID)
+  CONSTRAINT people_PK PRIMARY KEY (personID)
 );
 
 CREATE TABLE IF NOT EXISTS passwords.websites (
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS passwords.websites (
   name varchar(50) NOT NULL,
   url varchar(60) NOT NULL,
   comment varchar(60) DEFAULT NULL,
-  CONSTRAINT websitesPK PRIMARY KEY (websiteID),
+  CONSTRAINT websites_PK PRIMARY KEY (websiteID),
   UNIQUE KEY websites_unique (url)
 );
 
@@ -24,6 +24,6 @@ CREATE TABLE IF NOT EXISTS passwords.users (
   timestamp datetime NOT NULL,
   comment varchar(60) DEFAULT NULL,
   PRIMARY KEY (username),
-  CONSTRAINT usersWebsitesFK FOREIGN KEY (websiteID) REFERENCES websites (websiteID) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT users_websites_FK FOREIGN KEY (websiteID) REFERENCES websites (websiteID) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT users_people_FK FOREIGN KEY (personID) REFERENCES people (personID) ON DELETE CASCADE ON UPDATE CASCADE
 );
